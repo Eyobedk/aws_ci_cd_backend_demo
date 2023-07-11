@@ -13,12 +13,5 @@ jobs:
       uses: actions/setup-node@v1
       with: 
         node-version: ${{ matrix.node-version }}
-    
-    - name: Install nodejs
-      run: npm install
-    
-    - name: build the Ts
-      run: npm run build
-    
-    - name: Start the app
-      run: npm start
+    - run: |
+        npm install && npm run build && npm start
