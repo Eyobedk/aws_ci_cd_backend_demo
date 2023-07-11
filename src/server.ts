@@ -25,6 +25,7 @@ app.get('/api/v1/user', (req: Request, res: Response, next: NextFunction)=>{
     }catch(error){throw error}
 })
 console.log("here")
+
 app.listen(4001, ()=>{
     console.log('app listening on port ', 4000)
 })
