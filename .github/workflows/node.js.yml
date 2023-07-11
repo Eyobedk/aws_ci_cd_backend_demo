@@ -1,17 +1,44 @@
-name: nodejs CI
+name: Node.js CI
 
 on:
   push:
-    branches: [master]
+    branches:
+      - main
+      - develop
 
 jobs:
   build:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x, 16.x]
+
     steps:
-    - uses: actions/checkout@v2
-    - name: use nodejs ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with: 
-        node-version: ${{ matrix.node-version }}
-    - run: |
-        npm install && npm run build && npm start
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Cache node_modules
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+      - name: Start app
+        run: npm start
+
+      - name: Check for errors
+        run: |
+          if [ -f "errors.log" ]; then
+            echo "Errors found:"
+            cat errors.log
+            exit 1
+          fi
