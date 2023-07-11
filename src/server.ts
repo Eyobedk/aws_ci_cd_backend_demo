@@ -17,6 +17,7 @@ app.get('/api/v1/user', (req: Request, res: Response, next: NextFunction)=>{
         console.log(user)
 
         res.status(200).json({
+            message:"data sent",
             data:{
                 user
             }
