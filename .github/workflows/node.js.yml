@@ -9,7 +9,7 @@ jobs:
     runs-on: self-hosted
     steps:
     - uses: actions/checkout@v2
-    - name: use nodejs ${{ matric.node-version }}
+    - name: use nodejs ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with: 
         node-version: ${{ matrix.node-version }}
