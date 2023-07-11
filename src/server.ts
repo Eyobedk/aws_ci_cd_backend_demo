@@ -26,6 +26,6 @@ app.get('/api/v1/user', (req: Request, res: Response, next: NextFunction)=>{
 })
 console.log("here")
 
-app.listen(4001, ()=>{
+app.listen(4000, ()=>{
     console.log('app listening on port ', 4000)
 })
