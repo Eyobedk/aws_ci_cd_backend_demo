@@ -5,7 +5,7 @@
   "main": "dist/src/server.js",
   "scripts": {
     "build": "tsc",
-    "start": "pm2 start dist/src/server.js -f --watch",
+    "start": "pm2 restart dist/src/server.js --watch",
     "stop": "ls",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
