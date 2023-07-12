@@ -5,7 +5,7 @@
   "main": "dist/src/server.js",
   "scripts": {
     "build": "tsc",
-    "start": "pm2 restart dist/src/server.js",
+    "start": "node dist/src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

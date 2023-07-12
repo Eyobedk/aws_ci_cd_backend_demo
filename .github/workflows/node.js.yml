@@ -17,7 +17,5 @@ jobs:
       run: npm install
     - name: Build project
       run: npm run build
-    - name: Stop Runnig app
-      run: pm2 stop server
     - name: Start app
       run: npm start
