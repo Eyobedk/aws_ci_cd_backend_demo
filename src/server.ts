@@ -20,7 +20,8 @@ app.get('/api/v1/user', (req: Request, res: Response, next: NextFunction)=>{
         res.status(200).json({
             message:process.env.ENVIROMENT,
             data:{
-                user
+                user,
+                no: "SZA"
             }
         })
     }catch(error){throw error}
