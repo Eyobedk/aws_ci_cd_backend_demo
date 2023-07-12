@@ -14,7 +14,7 @@ app.get('/api/v1/user', (req: Request, res: Response, next: NextFunction)=>{
             age: 23,
             blood:"O+"
         }
-        console.log(user)
+        console.log("api work")
 
         res.status(200).json({
             message:"data sent",
