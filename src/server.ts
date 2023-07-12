@@ -13,7 +13,7 @@ app.get('/api/v1/user', (req: Request, res: Response, next: NextFunction)=>{
         const user = {
             id: 1,
             name: "eyobed",
-            age: 23,
+            age: 24,
             blood:"O+"
         }
 
@@ -21,7 +21,7 @@ app.get('/api/v1/user', (req: Request, res: Response, next: NextFunction)=>{
             message:process.env.ENVIROMENT,
             data:{
                 user,
-                no: "lafama"
+                no: "miracles"
             }
         })
     }catch(error){throw error}
