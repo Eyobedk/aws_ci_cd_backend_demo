@@ -17,5 +17,3 @@ jobs:
       run: npm install
     - name: Build project
       run: npm run build
-    - name: Start app
-      run: npm start

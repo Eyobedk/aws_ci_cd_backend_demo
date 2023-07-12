@@ -21,7 +21,7 @@ app.get('/api/v1/user', (req: Request, res: Response, next: NextFunction)=>{
             message:process.env.ENVIROMENT,
             data:{
                 user,
-                no: "Eyobed"
+                no: "chebude"
             }
         })
     }catch(error){throw error}
