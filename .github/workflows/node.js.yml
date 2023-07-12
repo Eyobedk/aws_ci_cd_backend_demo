@@ -15,6 +15,8 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: Install dependencies
       run: npm install
+    - name: Stop pm2
+      run: npm stop
     - name: Build project
       run: npm run build
     - name: Start app
