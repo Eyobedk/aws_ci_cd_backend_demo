@@ -18,4 +18,4 @@ jobs:
     - name: Build project
       run: npm run build
     - name: Start app
-      run: npm start
+      run: ls && npm start
