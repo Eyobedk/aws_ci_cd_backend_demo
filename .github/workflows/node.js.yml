@@ -18,4 +18,12 @@ jobs:
     - name: Build project
       run: npm run build
     - name: Start app
-      run: ls && npm start
+      run: |
+        pm2 list | grep -w "online"
+        if [ $? -eq 0 ]; then
+          echo "PM2 process is running."
+        else
+          echo "PM2 process is not running."
+          # Take action if process is not running
+        fi
+        npm start
